@@ -1,0 +1,264 @@
+/* ==== GLOBAL STYLES ==== */
+:root {
+  --bg-day: linear-gradient(135deg, #08f84c 0%, #062fe9 100%);
+  --bg-night: linear-gradient(135deg, #141E30 0%, #243B55 100%);
+  --white: #fff;
+  --dark: #222;
+  --shadow: rgba(0,0,0,0.25);
+  --blue: #3498db;
+  --blue-dark: #2179b5;
+}
+
+
+*{
+  margin:0;
+  padding: 0;
+}
+
+
+body {
+font-family: "Michroma", sans-serif;
+  background: var(--bg-day);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.6s ease;
+}
+
+
+body.night {
+  background: var(--bg-night);
+  color: var(--white);
+}
+
+
+header {
+  background: rgba(255, 255, 255, 0.149);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 8px var(--shadow);
+  border-radius: 0 0 20px 20px;
+}
+
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+
+.controls button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+.controls button:hover {
+  background: rgba(255,255,255,0.45);
+}
+
+
+/* ==== SEARCH BAR ==== */
+.search-bar {
+  text-align: center;
+  margin: 25px;
+}
+
+
+#city-inp {
+  padding: 12px 16px;
+  border-radius: 25px;
+  border: 2px solid var(--blue);
+  outline: none;
+  width: 260px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+#go-btn, #geo-btn {
+  padding: 12px 16px;
+  border: none;
+  margin-left: 8px;
+  border-radius: 25px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+#go-btn:hover, #geo-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+
+/* ==== MAIN BOX ==== */
+.main-box {
+  max-width: 380px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  backdrop-filter: blur(20px);
+  color: var(--white);
+  margin-bottom: 30px;
+  animation: fadeIn 0.8s ease;
+}
+
+
+.main-box h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+
+#main-temp {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+
+.main-box img {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+}
+
+
+/* ==== FORECAST ==== */
+.forecast {
+  padding: 0 20px 30px;
+  text-align: center;
+  color: var(--white);
+}
+
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+
+.forecast-card {
+  background: rgba(255,255,255,0.2);
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+
+.forecast-card:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+
+.forecast-card h4 {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 6px;
+}
+
+
+/* ==== MULTI CITIES ==== */
+.multi-cities {
+  padding: 0 20px 30px;
+}
+
+
+.multi-cities h3 {
+  margin-bottom: 18px;
+  color: var(--white);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+
+.card {
+  background: rgba(255,255,255,0.2);
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+
+.card h4 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-top: 6px;
+}
+
+
+/* ==== TIPS ==== */
+.tips {
+  text-align: center;
+  padding: 25px;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 500px) {
+  #city-inp {
+    width: 180px;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherDash+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Weather Dashboard+</div>
+    <div class="controls">
+      <button id="unit-toggle">°C / °F</button>
+      <button id="theme-toggle">🌞 / 🌙</button>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="search-bar">
+      <input type="text" id="city-inp" placeholder="Enter a city...">
+      <button id="go-btn">Search</button>
+      <button id="geo-btn">📍 Use My Location</button>
+    </section>
+
+
+    <section class="main-box" id="main-box">
+      <h2 id="main-city">---</h2>
+      <p id="main-temp">-- °C</p>
+      <p id="main-cond">Condition</p>
+      <img id="main-icon" src="" alt="">
+      <div id="main-details"></div>
+    </section>
+
+    <section class="forecast" id="forecast">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-grid" id="forecast-grid"></div>
+    </section>
+
+
+    <section class="multi-cities">
+      <h3>Popular Locations</h3>
+      <div class="grid" id="grid"></div>
+    </section>
+
+
+    <section class="tips" id="tips"></section>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
